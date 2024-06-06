@@ -1,0 +1,54 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: lightgray;
+  height: 200px;
+}
+  
+.footer-top {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.email-link {
+  transition: opacity 0.05s;
+}
+
+.email-link:hover {
+  color: white;
+  opacity: 0.5;
+}
+
+@media (max-width: 680px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .company-address {
+    margin-right: 0;
+  }
+}
+  
+@media (min-width: 681px) {
+  .company-address {
+    margin-right: 30px;
+  }
+}
+
+.footer-bottom {
+  opacity: 0.8;
+}
+  
+.company-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  color: black;
+  margin: 75px 0;
+}

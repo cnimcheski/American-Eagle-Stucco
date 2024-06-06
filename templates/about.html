@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block head %} 
+  <title>About</title>
+  <link rel="stylesheet" href="static/css/about.css">
+{% endblock %}
+
+{% block header_image %}home2.jpg{% endblock %}
+{% block header_overlay_text %}ABOUT{% endblock %}
+
+{% block main %}
+  <div class="about">
+    <div class="about-summary">
+      <p class="summary-details">detail 1</p>
+      <p class="summary-details">detail 2</p>
+    </div>
+
+    <div class="about-section">
+      <p class="section-header">section header</p>
+      <p class="section-details">section details</p>
+    </div>
+    
+    <div class="horizontal-divider"></div>
+
+    <div class="about-section">
+      <p class="section-header">section header</p>
+      <p class="section-details">section details</p>
+    </div>
+  </div>
+{% endblock %}

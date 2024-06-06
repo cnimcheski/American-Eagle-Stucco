@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="icon" type="image/x-icon" href="static/images/logo.png">
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/footer.css">
+    <link rel="stylesheet" href="static/css/general.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- bootstrap js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="/">American Eagle Stucco</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <div class="navigation-buttons">
+            <a href="/" class="navigation-item">Home</a>
+            <a href="/about" class="navigation-item">About</a>
+            <a href="/services" class="navigation-item">Services</a>
+            <a href="/projects" class="navigation-item">Projects</a>
+            <a href="/apply" class="navigation-item">Apply</a>
+            <a href="/contact-us" class="navigation-item">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    {% if is_home is not defined %}
+      {% set is_home = False %}
+    {% endif %}
+
+    {% if is_home %}
+      <div class="header-image-container">
+        <img class="home-image" src="static/images/home.jpg">
+    
+        <div class="home-image-overlay-container">
+          <p class="home-image-overlay-text-top">residential, commercial, and retail construction work</p>
+          <p class="home-image-overlay-text-bottom">IN THE VALLEY</p>
+          <a class="home-image-overlay-learn-more-button" href="/about">Learn More</a>
+        </div>
+      </div>
+    {% else %}
+      <div class="header-image-container">
+        <img class="header-image" src="static/images/{% block header_image %}{% endblock %}">
+
+        <div class="header-image-overlay">{% block header_overlay_text %}{% endblock %}</div>
+      </div>
+    {% endif %}
+
+    <main>
+      {% block main %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <p class="company-address">16719 E Palisades Blvd #102 Fountain Hills, AZ 85268</p>
+        <a href="mailto:americaneaglestucco@gmail.com" class="email-link">americaneaglestucco@gmail.com</a>
+      </div>
+  
+      <div class="footer-bottom">&#169 American Eagle Stucco 2017</div>
+    </footer>
+  </body>
+</html>

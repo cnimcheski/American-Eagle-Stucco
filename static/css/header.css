@@ -89,10 +89,17 @@
   padding: 15px 0px;
   border: none;
   transition: color 0.05s;
+  transition: opacity 0.05s;
 }
-  
+
+.navigation-item.active {
+  color: white;
+  opacity: 0.9;
+}
+
 .navigation-item:hover {
   color: white;
+  opacity: 1.0;
 }
 
 @media (max-width: 725px) {

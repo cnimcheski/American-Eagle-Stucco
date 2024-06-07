@@ -35,12 +35,12 @@
 
         <div class="collapse navbar-collapse" id="myNavbar">
           <div class="navigation-buttons">
-            <a href="/" class="navigation-item">Home</a>
-            <a href="/about" class="navigation-item">About</a>
-            <a href="/services" class="navigation-item">Services</a>
-            <a href="/projects" class="navigation-item">Projects</a>
-            <a href="/apply" class="navigation-item">Apply</a>
-            <a href="/contact-us" class="navigation-item">Contact Us</a>
+            <a href="/" class="navigation-item {% if active_page == 'home' %}active{% endif %}">Home</a>
+            <a href="/about" class="navigation-item {% if active_page == 'about' %}active{% endif %}">About</a>
+            <a href="/services" class="navigation-item {% if active_page == 'services' %}active{% endif %}">Services</a>
+            <a href="/projects" class="navigation-item {% if active_page == 'projects' %}active{% endif %}">Projects</a>
+            <!-- <a href="/apply" class="navigation-item">Apply</a> -->
+            <a href="/contact-us" class="navigation-item {% if active_page == 'contact-us' %}active{% endif %}">Contact Us</a>
           </div>
         </div>
       </div>

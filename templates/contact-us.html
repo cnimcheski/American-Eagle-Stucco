@@ -4,6 +4,17 @@
   <title>Contact Us</title>   
   <link rel="stylesheet" href="static/css/contact-us.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  {% if success == 1 %}
+    <script>
+      function myFunction() {
+          alert("Your message was successfully sent!");
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        myFunction();
+      });
+    </script>
+  {% endif %}
 {% endblock %}
 
 {% block header_image %}contact-us.jpg{% endblock %}

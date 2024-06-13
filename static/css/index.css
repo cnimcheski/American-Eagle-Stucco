@@ -17,13 +17,7 @@
   margin-bottom: 80px;
 }
 
-.about {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+.about,
 .take-action {
   flex: 1;
   display: flex;
@@ -31,10 +25,18 @@
   align-items: center;
 }
 
+.about-image-href,
+.take-action-image-href {
+  width: 75%;
+  height: auto;
+  border-radius: 2px;
+}
+
 .about-image,
 .take-action-image {
-  width: 75%;
-  border-radius: 2px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-button,
@@ -99,6 +101,8 @@
   .enticement-container {
     flex-direction: column;
     justify-content: center;
+
+    margin-bottom: 30px;
   }
 
   .take-action-image,
@@ -109,13 +113,22 @@
     width: 90%;
   }
 
-  .about-details {
-    margin-bottom: 50px;
-  }
-
   .about-details,
   .take-action-details {
     font-size: 18px;
+  }
+
+  .about-link {
+    margin-bottom: 50px;
+  }
+
+  .about-link,
+  .take-action-link {
+    font-size: 19px;
+  }
+
+  .arrow-right {
+    border-width: 0 2px 2px 0;
   }
 
   .description-header {

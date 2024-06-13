@@ -6,6 +6,29 @@
   gap: 50px;
 }
 
+.certifications {
+  display: flex;
+}
+
+.certification i {
+  font-size: 45px;
+}
+
+.certification img {
+  width: 50px;
+}
+
+.certification {
+  flex: 1;
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
 .section-header {
   color: black;
   font-weight: 400;
@@ -17,7 +40,6 @@
 .summary-details,
 .section-details {
   color: gray;
-  font-style: italic;
   font-weight: 300;
   font-size: 21px;
   margin: 12px 0;
@@ -26,4 +48,19 @@
 .horizontal-divider {
   height: 1px;
   background-color: gray;
+}
+
+.team {
+  /* use a grid instead..... */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.person-card {
+  flex: 1;
+  height: 250px;
+  width: 200px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }

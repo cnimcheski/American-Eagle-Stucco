@@ -103,10 +103,10 @@
     justify-content: center;
 
     margin-bottom: 30px;
-  }
+  } 
 
-  .take-action-image,
-  .about-image,
+  .about-image-href,
+  .take-action-image-href,
   .take-action-details,
   .about-details,
   .description-details {

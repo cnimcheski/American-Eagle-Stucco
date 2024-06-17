@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      p {
+        margin: 5px 0;
+      }
+
+      .message {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .header {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="message">
+      <p>Reply to the sender by using the reply button.</p>
+
+      <div>
+        <p class="header">Sender Name</p>
+        <p>{{ name }}</p>
+      </div>
+
+      <div>
+        <p class="header">Message</p>
+        <p>{{ message }}</p>
+      </div>
+    </div>
+  </body>
+</html>

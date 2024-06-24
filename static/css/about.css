@@ -1,43 +1,55 @@
 .about {
   display: flex;
   flex-direction: column;
-  margin: 60px auto 30px auto;
-  /* margin: 60px auto; */
-  width: 90%;
-  gap: 50px;
+  gap: 30px;
 }
 
-.headline {
+.headline-background {
+  background-color: rgb(238, 238, 238);
+}
+
+.company-details-background {
+  background-color: white;
+}
+
+.headline,
+.company-details-container {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 60px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 60px 0;
 }
 
-.headline-image {
-  width: 100%;
-  height: 260px;
+.headline .image,
+.company-details-container .image {
+  width: 35%;
   object-fit: cover;
 }
 
-.headline-header {
+.headline .header {
   color: black;
   line-height: 1.1;
   font-size: 30px;
 }
 
-.headline-details {
+.headline .details,
+.company-details-container .details {
   color: black;
   font-weight: 300;
   font-size: 20px;
 }
 
-.headline-text {
+.headline .text,
+.company-details-container .text {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
 .certifications {
+  margin-top: 40px;
   display: flex;
   align-items: flex-end;
 }
@@ -87,6 +99,34 @@
   background-color: gray;
 }
 
+.core-values-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.core-values {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.core-value {
+  height: 300px;
+  flex: 1;
+  background-color: rgb(238, 238, 238);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.core-value-text {
+  color: black;
+  font-weight: 300;
+  font-size: 18px;
+  padding: 25px;
+}
+
 .team {
   /* use a grid instead..... */
   display: flex;
@@ -103,17 +143,28 @@
 }
 
 @media (max-width: 1040px) {
-  .headline-header {
+  .headline .header {
     font-size: 26px;
   }
 
-  .headline-details {
+  .headline .details,
+  .company-details-container .details {
     font-size: 17px;
+  }
+
+  .core-values {
+    flex-wrap: wrap;
+  }
+
+  .core-value {
+    flex: initial;
+    width: 47%;
   }
 }
 
 @media (max-width: 910px) {
-  .headline {
+  .headline,
+  .company-details-container {
     flex-direction: column;
   }
 
@@ -131,11 +182,20 @@
   }
 
   /* Change the orders so that the text is shown above the image */
-  .headline-text {
+  .headline .text,
+  .company-details-container .text {
     order: 0;
   }
 
-  .headline-image {
+  .headline .image,
+  .company-details-container .image {
     order: 1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .core-value {
+    width: 100%;
   }
 }

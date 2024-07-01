@@ -1,7 +1,7 @@
 .about {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
 }
 
 .headline-background {
@@ -49,7 +49,7 @@
 }
 
 .certifications {
-  margin-top: 40px;
+  margin: 40px 0;
   display: flex;
   align-items: flex-end;
 }
@@ -71,27 +71,15 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
-  margin-bottom: 30px;
 }
 
-.certification-number {
-  font-size: 26px;
-}
-
-.section-header {
+.core-values-header,
+.faqs-header {
   color: black;
-  font-weight: 400;
-  font-size: 35px;
-  margin-bottom: 20px;
-  margin-top: 0px;
-}
-
-.summary-details,
-.section-details {
-  color: black;
-  font-weight: 300;
-  font-size: 21px;
-  margin: 12px 0;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  margin: 30px 0;
 }
 
 .horizontal-divider {
@@ -102,6 +90,9 @@
 .core-values-container {
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .core-values {
@@ -120,11 +111,102 @@
   justify-content: center;
 }
 
-.core-value-text {
+.core-value p,
+.answer p {
   color: black;
   font-weight: 300;
   font-size: 18px;
+}
+
+.core-value p {
   padding: 25px;
+}
+
+.faqs-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faqs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 0;
+  padding-inline-start: 0;
+}
+
+.faq {
+  padding: 25px;
+  border-radius: 18px;
+  background-color: rgb(238, 238, 238);
+  color: black;
+  font-weight: 300;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.question p {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.4s ease;
+}
+
+.answer p {
+  padding-top: 12px;
+  line-height: 1.6;
+}
+
+.faq.active .answer {
+  max-height: 500px; 
+  animation: fade 1s ease-in-out;
+}
+
+.faq.active .arrow {
+  transform: rotate(225deg);
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5.7px;
+  height: 15px;
+  transform: rotate(45deg);
+  transition: transform 0.5s ease-in;
+}
+
+/* adding the fade in effect for faqs */
+@keyframes fade  {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.faq:hover {
+  box-shadow: 0px 0px 5px 2px rgba(138, 138, 138, 0.75);
+  cursor: pointer;
 }
 
 .team {
@@ -175,6 +257,7 @@
   .certification {
     flex: initial;
     width: 50%;
+    margin-bottom: 35px;
   }
 
   .certification img {

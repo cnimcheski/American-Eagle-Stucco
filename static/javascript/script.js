@@ -7,3 +7,12 @@ const sr = ScrollReveal ({
 
 sr.reveal('.home-image-overlay-container', {origin: 'top'})
 sr.reveal('.header-image-overlay', {origin: 'top'})
+
+
+const faqs = document.querySelectorAll(".faq");
+
+faqs.forEach(faq => {
+    faq.addEventListener("click", () => {
+        faq.classList.toggle("active");
+    });
+});

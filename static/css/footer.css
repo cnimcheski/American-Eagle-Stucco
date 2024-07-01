@@ -17,6 +17,11 @@
   transition: opacity 0.05s;
 }
 
+.email-link:focus {
+  color: white;
+  text-decoration: none;
+}
+
 .email-link:hover {
   color: white;
   opacity: 0.5;

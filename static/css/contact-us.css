@@ -35,6 +35,11 @@
   transition: opacity 0.05s;
 }
 
+.detail-link:focus {
+  color: gray;
+  text-decoration: none;
+}
+
 .detail-link:hover {
   color: gray;
   opacity: 0.5;

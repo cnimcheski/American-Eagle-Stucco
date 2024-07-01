@@ -281,4 +281,13 @@
   .core-value {
     width: 100%;
   }
+
+  .core-values-header,
+  .faqs-header {
+    font-size: 36px;
+  }
+
+  .question p {
+    font-size: 20px;
+  }
 }

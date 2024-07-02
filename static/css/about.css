@@ -4,11 +4,11 @@
   gap: 50px;
 }
 
-.headline-background {
+.section.gray {
   background-color: rgb(238, 238, 238);
 }
 
-.company-details-background {
+.section.white {
   background-color: white;
 }
 
@@ -23,26 +23,32 @@
 }
 
 .headline .image,
-.company-details-container .image {
+.company-details-container .image,
+.team .image {
   width: 35%;
   object-fit: cover;
 }
 
-.headline .header {
+.headline .header,
+.team .header {
   color: black;
-  line-height: 1.1;
+  font-family: "Quicksand", sans-serif;
   font-size: 30px;
+  font-weight: 600;
+  line-height: 1.1;
 }
 
 .headline .details,
-.company-details-container .details {
+.company-details-container .details,
+.team .details {
   color: black;
   font-weight: 300;
   font-size: 20px;
 }
 
 .headline .text,
-.company-details-container .text {
+.company-details-container .text,
+.team .text {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -106,20 +112,36 @@
   flex: 1;
   background-color: rgb(238, 238, 238);
   border-radius: 18px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 6px;
 }
 
-.core-value p,
+.core-value .header {
+  color: black;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+
+.core-value .details,
 .answer p {
   color: black;
   font-weight: 300;
   font-size: 18px;
+  line-height: 1.6;
 }
 
-.core-value p {
-  padding: 25px;
+.team {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 60px 0;
 }
 
 .faqs-container {
@@ -170,7 +192,6 @@
 
 .answer p {
   padding-top: 12px;
-  line-height: 1.6;
 }
 
 .faq.active .answer {
@@ -209,28 +230,15 @@
   cursor: pointer;
 }
 
-.team {
-  /* use a grid instead..... */
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.person-card {
-  flex: 1;
-  height: 250px;
-  width: 200px;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-}
-
 @media (max-width: 1040px) {
-  .headline .header {
+  .headline .header,
+  .team .header {
     font-size: 26px;
   }
 
   .headline .details,
-  .company-details-container .details {
+  .company-details-container .details,
+  .team .details {
     font-size: 17px;
   }
 
@@ -246,7 +254,8 @@
 
 @media (max-width: 910px) {
   .headline,
-  .company-details-container {
+  .company-details-container,
+  .team {
     flex-direction: column;
   }
 
@@ -266,12 +275,14 @@
 
   /* Change the orders so that the text is shown above the image */
   .headline .text,
-  .company-details-container .text {
+  .company-details-container .text,
+  .team .text {
     order: 0;
   }
 
   .headline .image,
-  .company-details-container .image {
+  .company-details-container .image,
+  .team .image {
     order: 1;
     width: 100%;
   }

@@ -1,12 +1,69 @@
 {% extends "layout.html" %}
 
 {% block head %}
-    <title>Services</title>
+  <title>Services</title>
+  <link rel="stylesheet" href="static/css/services.css">
 {% endblock %}
 
 {% block header_image %}about.jpeg{% endblock %}
-{% block header_overlay_text %}SERVICES{% endblock %}
+{% block header_overlay_text %}
+  <p>SERVICES</p>
+  <p class="services-header-details">From stucco and siding to paneling, we offer a wide variety of services.</p>
+{% endblock %}
 
 {% block main %}
+  <div class="services">
+    <!-- <div class="services-header">
+      <p class="header">Services</p>
+      <p class="details">More about our services.</p>
+    </div> -->
 
+    <div class="service gray">
+      <div class="service-contents">
+        <img class="img" src="static/images/acero-harvest-3.jpg">
+
+        <div class="text">
+          <p class="header">Stucco</p>
+          <p class="details">plastering, synthetics, eifs. hello</p>
+          <p class="details">hello again</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service white">
+      <div class="service-contents">
+        <div class="text">
+          <p class="header">Stone and Brick Veneer</p>
+          <p class="details">With four generations of experience on various job sites, we've seen it all. Since each job is unique, we have learned to take pride in our high quality of work. As we are licensed, bonded, insured, and OSHA certified, at American Eagle Stucco we are more than qualified to do the job and do it right.</p>
+          <p class="details">With four generations of experience on various job sites, we've seen it all. Since each job is unique, we have learned to take pride in our high quality of work. As we are licensed, bonded, insured, and OSHA certified, at American Eagle Stucco we are more than qualified to do the job and do it right.</p>
+        </div>
+
+        <img class="img" src="static/images/acero-harvest-3.jpg">
+      </div>
+    </div>
+
+    <div class="service gray">
+      <div class="service-contents">
+        <img class="img" src="static/images/acero-harvest-3.jpg">
+        
+        <div class="text">
+          <p class="header">Panels</p>
+          <p class="details">With four generations of experience on various job sites, we've seen it all. Since each job is unique, we have learned to take pride in our high quality of work. As we are licensed, bonded, insured, and OSHA certified, at American Eagle Stucco we are more than qualified to do the job and do it right.</p>
+          <p class="details">With four generations of experience on various job sites, we've seen it all. Since each job is unique, we have learned to take pride in our high quality of work. As we are licensed, bonded, insured, and OSHA certified, at American Eagle Stucco we are more than qualified to do the job and do it right.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service white">
+      <div class="service-contents">
+        <div class="text">
+          <p class="header">Other Work</p>
+          <p class="details">With four generations of experience on various job sites, we've seen it all. Since each job is unique, we have learned to take pride in our high quality of work. As we are licensed, bonded, insured, and OSHA certified, at American Eagle Stucco we are more than qualified to do the job and do it right.</p>
+          <p class="details">With four generations of experience on various job sites, we've seen it all. Since each job is unique, we have learned to take pride in our high quality of work. As we are licensed, bonded, insured, and OSHA certified, at American Eagle Stucco we are more than qualified to do the job and do it right.</p>
+        </div>
+
+        <img class="img" src="static/images/acero-harvest-3.jpg">
+      </div>
+    </div>
+  </div>
 {% endblock %}

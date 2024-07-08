@@ -3,14 +3,17 @@ from flask_mail import Mail, Message
 
 app = Flask(__name__)
 
+# adding all configs 
+app.config.from_pyfile('config.py')
+
 # SMTP server configuration
-app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 587
-app.config["MAIL_USERNAME"] = "chrisnimcheski@gmail.com"
-app.config["MAIL_PASSWORD"] = "lbhq rwya qjcq txlc"
+app.config["MAIL_SERVER"] = app.config.get('MAIL_SERVER')
+app.config["MAIL_PORT"] = app.config.get('MAIL_PORT')
+app.config["MAIL_USERNAME"] = app.config.get('MAIL_USERNAME')
+app.config["MAIL_PASSWORD"] = app.config.get('MAIL_PASSWORD')
 app.config["MAIL_USE_TLS"] = True
 app.config["MAIL_USE_SSL"] = False
-app.config["MAIL_DEFAULT_SENDER"] = "chrisnimcheski@gmail.com"
+app.config["MAIL_DEFAULT_SENDER"] = app.config.get('MAIL_DEFAULT_SENDER')
 
 # initialize the mailer
 mail = Mail()
@@ -49,7 +52,7 @@ def contact():
         email = request.form['email']
         message = request.form['message']
         
-        msg = Message("Message from website contact form", recipients=["cnimcheski@hotmail.com"], reply_to=email)
+        msg = Message("Message from website contact form", recipients=[app.config.get('MAIL_TO')], reply_to=email)
         msg.html = render_template("contact-email.html", message=message, email=email, name=name)
         mail.send(msg)
         # after email is sent successfully, show a success alert

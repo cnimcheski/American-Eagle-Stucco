@@ -73,12 +73,56 @@
     </main>
 
     <footer class="footer">
-      <div class="footer-top">
-        <p class="company-address">16719 E Palisades Blvd #102 Fountain Hills, AZ 85268</p>
-        <a href="mailto:americaneaglestucco@gmail.com" class="email-link">americaneaglestucco@gmail.com</a>
-      </div>
+      <div class="top">
+        <div class="headline">
+          <img src="static/images/logo.png" class="logo">
   
-      <div class="footer-bottom">&#169 American Eagle Stucco 2017</div>
+          <p>We want to help make your exterior as welcoming as possible. Contact us today for a free estimate!</p>
+        </div>
+  
+        <div class="office">
+          <div class="header">
+            <p>Office</p>
+            <div class="underline"><span></span></div>
+          </div>
+
+          <p class="address">16719 E Palisades Blvd #102 Fountain Hills, AZ 85268</p>
+          <a href="mailto:americaneaglestucco@gmail.com" class="email">americaneaglestucco@gmail.com</a>
+          <a href="tel:4808375997" class="phone">480-837-5997</a>
+        </div>
+  
+        <div class="links">
+          <div class="header">
+            <p>Links</p>
+            <div class="underline"><span></span></div>
+          </div>
+
+          <a href="/" class="link {% if active_page == 'home' %}active{% endif %}">Home</a>
+          <a href="/about" class="link {% if active_page == 'about' %}active{% endif %}">About</a>
+          <a href="/services" class="link {% if active_page == 'services' %}active{% endif %}">Services</a>
+          <a href="/projects" class="link {% if active_page == 'projects' %}active{% endif %}">Projects</a>
+          <a href="/contact-us" class="link {% if active_page == 'contact-us' %}active{% endif %}">Contact Us</a>
+        </div>
+
+        <div class="services">
+          <div class="header">
+            <p>Our Services</p>
+            <div class="underline"><span></span></div>
+          </div>
+
+          <a href="/services" class="link">stucco/eifs/synthetics</a>
+          <a href="/services" class="link">plaster</a>
+          <a href="/services" class="link">stone/brick veneer</a>
+          <a href="/services" class="link">panels</a>
+          <a href="/services" class="link">...and more</a>
+        </div>
+      </div>
+
+      <div class="horizontal-divider"></div>
+
+      <div class="bottom">
+        <p>American Eagle Stucco &#169 2017 - All Rights Reserved</p>
+      </div>
     </footer>
 
     <!-- scroll reveal js -->

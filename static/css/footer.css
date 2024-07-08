@@ -1,16 +1,134 @@
 .footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: top;
+  gap: 30px;
+  padding: 50px 0 30px 0;
 
-  background-color: lightgray;
-  height: 200px;
+  background-color: rgb(34, 34, 34);
 }
-  
-.footer-top {
+
+.top {
+  width: 80%;
+  margin: 0 auto;
   display: flex;
-  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: top;
+  gap: 50px;
+}
+
+.horizontal-divider {
+  width: 90%;
+  margin: 0 auto;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.5)
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.footer .headline {
+  flex: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.logo {
+  width: 80px;
+}
+
+.office {
+  flex: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 22px;
+}
+
+.office .address {
+
+}
+
+.office .email {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.office .email:hover,
+.office .phone:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.office .email:focus,
+.office .phone:focus {
+  text-decoration: none;
+  color: white;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.header p {
+  font-size: 17px;
+}
+
+.links,
+.services {
+  flex: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.link {
+  transition: color 0.05s;
+  transition: opacity 0.05s;
+}
+
+.link.active {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 0.9;
+}
+
+.link:hover {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 1.0;
+}
+
+.underline {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.underline span {
+  width: 15px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  animation: moving 2s linear infinite;
+}
+
+@keyframes moving {
+  0% {
+    left: -20px;
+  }
+
+  100% {
+    left: 100%;
+  }
 }
 
 .email-link {
@@ -27,33 +145,28 @@
   opacity: 0.5;
 }
 
-@media (max-width: 680px) {
-  .footer-top {
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 1050px) {
+  .footer .headline,
+  .office,
+  .services,
+  .links {
+    flex: 1;
+    flex-basis: 40%;
   }
 
-  .company-address {
-    margin-right: 0;
+  .top {
+    width: 90%;
+    flex-wrap: wrap;
   }
-}
-  
-@media (min-width: 681px) {
-  .company-address {
-    margin-right: 30px;
+
+  .horizontal-divider {
+    width: 100%;
   }
 }
 
-.footer-bottom {
-  opacity: 0.8;
-}
-  
-.company-description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  text-align: center;
-  color: black;
-  margin: 75px 0;
+@media (max-width: 650px) {
+  .footer .headline,
+  .office {
+    flex-basis: 100%;
+  }
 }

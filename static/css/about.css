@@ -12,7 +12,7 @@
   background-color: white;
 }
 
-.headline,
+.about .headline,
 .company-details-container {
   display: flex;
   align-items: center;
@@ -22,14 +22,14 @@
   padding: 60px 0;
 }
 
-.headline .image,
+.about .headline .image,
 .company-details-container .image,
 .team .image {
   width: 35%;
   object-fit: cover;
 }
 
-.headline .header,
+.about .headline .header,
 .team .header {
   color: black;
   font-family: "Quicksand", sans-serif;
@@ -38,7 +38,7 @@
   line-height: 1.1;
 }
 
-.headline .details,
+.about .headline .details,
 .company-details-container .details,
 .team .details {
   color: black;
@@ -46,7 +46,7 @@
   font-size: 20px;
 }
 
-.headline .text,
+.about .headline .text,
 .company-details-container .text,
 .team .text {
   display: flex;
@@ -231,12 +231,12 @@
 }
 
 @media (max-width: 1040px) {
-  .headline .header,
+  .about .headline .header,
   .team .header {
     font-size: 26px;
   }
 
-  .headline .details,
+  .about .headline .details,
   .company-details-container .details,
   .team .details {
     font-size: 17px;
@@ -253,7 +253,7 @@
 }
 
 @media (max-width: 910px) {
-  .headline,
+  .about .headline,
   .company-details-container,
   .team {
     flex-direction: column;
@@ -274,13 +274,13 @@
   }
 
   /* Change the orders so that the text is shown above the image */
-  .headline .text,
+  .about .headline .text,
   .company-details-container .text,
   .team .text {
     order: 0;
   }
 
-  .headline .image,
+  .about .headline .image,
   .company-details-container .image,
   .team .image {
     order: 1;

@@ -1,7 +1,15 @@
 .description-header {
-  font-weight: 400;
   font-size: 34px;
   margin-bottom: 25px;
+}
+
+.description-header,
+.about-button,
+.take-action-button,
+.about-link,
+.take-action-link {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
 }
 
 .description-details {
@@ -43,7 +51,6 @@
 .take-action-button {
   color: black;
   font-size: 25px;
-  font-weight: 500;
   transition: opacity 0.05s;
 }
 
@@ -66,7 +73,6 @@
   color: black;
   display: inline-flex;
   align-items: center;
-  font-weight: 400;
   font-size: 23px;
   transition: opacity 0.05s;
 }

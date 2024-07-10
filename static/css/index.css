@@ -1,4 +1,14 @@
+.company-description {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
 .description-header {
+  text-align: center;
   font-size: 34px;
   margin-bottom: 25px;
 }
@@ -13,6 +23,7 @@
 }
 
 .description-details {
+  text-align: center;
   font-weight: 300;
   font-size: 25px;
   width: 70%;

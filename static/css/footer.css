@@ -17,7 +17,7 @@
   gap: 50px;
 }
 
-.horizontal-divider {
+.footer .horizontal-divider {
   width: 90%;
   margin: 0 auto;
   height: 2px;
@@ -159,7 +159,7 @@
     flex-wrap: wrap;
   }
 
-  .horizontal-divider {
+  .footer .horizontal-divider {
     width: 100%;
   }
 }

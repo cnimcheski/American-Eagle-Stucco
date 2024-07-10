@@ -26,9 +26,9 @@
   margin: 12px 0;
 }
 
-.horizontal-divider {
+.projects .horizontal-divider {
   height: 1px;
-  background-color: gray;
+  background-color: black;
 }
 
 .carousel-inner {

@@ -14,6 +14,12 @@
       });
     </script>
   {% endif %}
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById('send-message-form').submit();
+    }
+  </script>
 {% endblock %}
 
 {% block header_image %}contact-us.jpg{% endblock %}
@@ -47,12 +53,12 @@
       <p class="message-header">Send us a message</p>
       <p class="message-description">For a free estimate or for any other inquiries, send us a message here.</p>
 
-      <form class="message-form" action="/contact-us" method="post">
+      <form id="send-message-form" class="message-form" action="/contact-us" method="post">
         <input type="text" class="input-box" placeholder="Enter your name" name="name" required>
         <input type="email" class="input-box" placeholder="Enter your email" name="email" required>
         <textarea type="text" class="input-box message-box" placeholder="Enter your message" name="message" required></textarea>
 
-        <input type="submit" value="Send Now" class="send-button">
+        <button type="submit" class="g-recaptcha send-button" data-sitekey="{{ site_key }}" data-callback='onSubmit' data-action='submit'>Send Now</button>
       </form>
     </div>
   </div>

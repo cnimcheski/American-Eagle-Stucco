@@ -1,5 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, abort
 from flask_mail import Mail, Message
+import requests
+from config import MAIL_USERNAME, MAIL_PASSWORD, MAIL_PORT, MAIL_SERVER, MAIL_DEFAULT_SENDER, MAIL_TO, RECAPTCHA_SITE_KEY, RECAPTCHA_SECRET_KEY, RECAPTCHA_VERIFY_URL
 
 app = Flask(__name__)
 
@@ -7,13 +9,13 @@ app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
 # SMTP server configuration
-app.config["MAIL_SERVER"] = app.config.get('MAIL_SERVER')
-app.config["MAIL_PORT"] = app.config.get('MAIL_PORT')
-app.config["MAIL_USERNAME"] = app.config.get('MAIL_USERNAME')
-app.config["MAIL_PASSWORD"] = app.config.get('MAIL_PASSWORD')
+app.config["MAIL_SERVER"] = MAIL_SERVER
+app.config["MAIL_PORT"] = MAIL_PORT
+app.config["MAIL_USERNAME"] = MAIL_USERNAME
+app.config["MAIL_PASSWORD"] = MAIL_PASSWORD
 app.config["MAIL_USE_TLS"] = True
 app.config["MAIL_USE_SSL"] = False
-app.config["MAIL_DEFAULT_SENDER"] = app.config.get('MAIL_DEFAULT_SENDER')
+app.config["MAIL_DEFAULT_SENDER"] = MAIL_DEFAULT_SENDER
 
 # initialize the mailer
 mail = Mail()
@@ -47,17 +49,21 @@ def apply():
 @app.route("/contact-us", methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
-        # send the message as a email
+        recaptchaResponse = request.form['g-recaptcha-response']
+        verifyResponse = requests.post(url=f"{RECAPTCHA_VERIFY_URL}?secret={RECAPTCHA_SECRET_KEY}&response={recaptchaResponse}").json()
+        if verifyResponse['success'] == False:
+            abort(401)
+        # user is not a bot...send the message as a email
         name = request.form['name']
         email = request.form['email']
         message = request.form['message']
         
-        msg = Message("Message from website contact form", recipients=[app.config.get('MAIL_TO')], reply_to=email)
+        msg = Message("Message from website contact form", recipients=[MAIL_TO], reply_to=email)
         msg.html = render_template("contact-email.html", message=message, email=email, name=name)
         mail.send(msg)
         # after email is sent successfully, show a success alert
-        return render_template("contact-us.html", active_page="contact-us", success=1)
-    return render_template("contact-us.html", active_page="contact-us")
+        return render_template("contact-us.html", active_page="contact-us", success=1, site_key=RECAPTCHA_SITE_KEY)
+    return render_template("contact-us.html", active_page="contact-us", site_key=RECAPTCHA_SITE_KEY)
 
 
 if __name__ == '__main__':

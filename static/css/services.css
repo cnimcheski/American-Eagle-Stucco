@@ -72,6 +72,20 @@
   object-fit: cover;
 }
 
+@media (max-width: 1000px) {
+  .service.gray .service-contents {
+    flex-direction: column-reverse;
+  }
+
+  .service.white .service-contents {
+    flex-direction: column;
+  }
+
+  .service .img {
+    width: 100%;
+  }
+}
+
 @media (max-width: 725px) {
   .services-header-details {
     font-size: 22px;

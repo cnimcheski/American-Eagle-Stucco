@@ -12,7 +12,8 @@
 
 .project-header {
   color: black;
-  font-weight: 400;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
   font-size: 35px;
   margin-bottom: 20px;
   margin-top: 0px;

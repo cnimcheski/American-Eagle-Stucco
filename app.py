@@ -49,15 +49,17 @@ def apply():
 @app.route("/contact-us", methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
+        # recaptcha...make sure user isn't a bot
         recaptchaResponse = request.form['g-recaptcha-response']
         verifyResponse = requests.post(url=f"{RECAPTCHA_VERIFY_URL}?secret={RECAPTCHA_SECRET_KEY}&response={recaptchaResponse}").json()
         if verifyResponse['success'] == False:
             abort(401)
+            
         # user is not a bot...send the message as a email
         name = request.form['name']
         email = request.form['email']
         message = request.form['message']
-        
+
         msg = Message("Message from website contact form", recipients=[MAIL_TO], reply_to=email)
         msg.html = render_template("contact-email.html", message=message, email=email, name=name)
         mail.send(msg)

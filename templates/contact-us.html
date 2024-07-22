@@ -2,44 +2,25 @@
 
 {% block head %}
   <title>Contact Us - American Eagle Stucco</title>   
-  <meta name="description" content="Contact us. Residential, commercial, and retail stucco and EIFS contractor in Phoenix, Arizona. High quality work. Four generations and over 50 years of experience. Send us a message today!">
+  <meta name="description" content="Contact us. Residential, commercial, and retail stucco and EIFS contractor in Arizona. High quality work. Four generations and over 50 years of experience. Give us a call today!">
   <link rel="stylesheet" href="static/css/contact-us.css">
-  {% if success == 1 %}
-    <script>
-      function myFunction() {
-          alert("Your message was successfully sent!");
-      }
-
-      document.addEventListener('DOMContentLoaded', function() {
-        myFunction();
-      });
-    </script>
-  {% endif %}
-  <script src="https://www.google.com/recaptcha/api.js"></script>
-  <script>
-    function onSubmit(token) {
-      var form = document.getElementById('send-message-form');
-      // check for required field validation errors before submitting recaptcha
-      if (form.checkValidity()) {
-        form.submit();
-      } else {
-        form.reportValidity();
-        grecaptcha.reset();
-      }
-    }
-  </script>
 {% endblock %}
 
 {% block header_image %}contact-us.jpg{% endblock %}
 {% block header_overlay_text %}CONTACT US{% endblock %}
 
 {% block main %}
-  <div class="contact-form">
+  <div class="contact-us">
+    <div class="text">
+      <h2>Give us a call!</h2>
+      <h4>For a free estimate or for any other inquiries, give us a call today!</h4>
+    </div>
+
     <div class="contact-details">
       <div class="detail">
         <i class="fas fa-map-marker-alt"></i>
         <p class="detail-title">Address</p>
-        <p class="detail-info">16719 E Palisades Blvd #102 Fountain Hills, AZ 85268</p>
+        <a class="detail-link" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=33.60818602489733, -111.71974900973768">16719 E Palisades Blvd #102 Fountain Hills, AZ 85268</a>
       </div>
 
       <div class="detail">
@@ -47,29 +28,8 @@
         <p class="detail-title">Phone</p>
         <a href="tel:4808375997" class="detail-link">480-837-5997</a>
       </div>
-
-      <div class="detail">
-        <i class="fas fa-envelope"></i>
-        <p class="detail-title">Email</p>
-        <a href="mailto:americaneaglestucco@gmail.com" class="detail-link">americaneaglestucco@gmail.com</a>
-      </div>
     </div>
 
-    <div class="divider"></div>
-
-    <div class="message">
-      <p class="message-header">Send us a message</p>
-      <p class="message-description">For a free estimate or for any other inquiries, send us a message here.</p>
-
-      <form id="send-message-form" class="message-form" action="/contact-us" method="post">
-        <input type="text" class="input-box" placeholder="Enter your name" name="name" required>
-        <input type="email" class="input-box" placeholder="Enter your email" name="email" required>
-        <textarea type="text" class="input-box message-box" placeholder="Enter your message" name="message" required></textarea>
-
-        <button type="submit" class="g-recaptcha send-button" data-sitekey="{{ site_key }}" data-callback='onSubmit' data-action='submit'>Send Now</button>
-      </form>
-    </div>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.8911215853786!2d-111.72187604395566!3d33.608129363894925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b988ed4c0c9e3%3A0xb6b87cd1782acd81!2s16719%20E%20Palisades%20Blvd%2C%20Fountain%20Hills%2C%20AZ%2085268!5e0!3m2!1sen!2sus!4v1717084811927!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
-
-  <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.8911215853786!2d-111.72187604395566!3d33.608129363894925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b988ed4c0c9e3%3A0xb6b87cd1782acd81!2s16719%20E%20Palisades%20Blvd%2C%20Fountain%20Hills%2C%20AZ%2085268!5e0!3m2!1sen!2sus!4v1717084811927!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 {% endblock %}

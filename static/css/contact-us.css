@@ -4,126 +4,60 @@
   margin-bottom: 10px;
 }
 
-.contact-form {
-  margin: 40px;
+.contact-us {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.contact-us .text {
+  width: 90%;
+}
+
+.contact-us h2,
+.contact-us h4 {
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  color: black;
+  margin: 4px 0;
 }
 
 .contact-details {
+  width: 80%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 30px;
-  max-width: 250px;
 }
 
 .detail-title {
   color: black;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
   font-size: 16px;
 }
 
-.detail-info {
-  color: gray;
-  font-size: 16px;
-}
-
-.detail-link {
+.detail a {
   color: gray;
   font-size: 16px;
   transition: opacity 0.05s;
 }
 
-.detail-link:focus {
+.detail a:focus {
   color: gray;
   text-decoration: none;
 }
 
-.detail-link:hover {
+.detail a:hover {
   color: gray;
   opacity: 0.5;
 }
 
-.divider {
-  width: 2px;
-  border-radius: 1px;
-  background-color: gray;
-  margin: 40px 50px;
-}
-
-.message {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.message-header {
-  font-size: 25px;
-  color: black;
-}
-
-.message-description {
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: gray;
-}
-
-.message-form {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.message-box {
-  height: 100px;
-  resize: none;
-}
-
-.input-box::placeholder {
-  color: gray;
-}
-
-.input-box {
-  background-color: rgba(0, 0, 0, 0.08);
-  color: black;
-  width: 100%;
-  outline: none;
-}
-
-.send-button {
-  display: inline-block;
-  color: white;
-  background-color: rgb(34, 34, 34);
-}
-
-.send-button,
-.input-box {
-  border: none;
-  border-radius: 3px;
-  padding: 10px;
-}
-
 @media (max-width: 820px) {
-  .contact-form {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-  }
-
-  .divider {
-    /* remove the divider */
-    display: none;
-  }
-
-  .message {
-    order: 0;
-  }
-
   .contact-details {
-    order: 1;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: baseline;
@@ -138,20 +72,10 @@
 }
 
 @media (max-width: 480px) {
-  .contact-form {
-    margin: 40px 30px;
-  }
-
-  .message-header {
-    font-size: 20px;
-  }
-
-  .message-description {
-    font-size: 16px;
-  }
-
   .contact-details {
-    flex-direction: column;
+    width: 90%;
+    gap: 30px;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
   }

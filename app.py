@@ -46,26 +46,9 @@ def apply():
     return render_template("apply.html", active_page="apply")
 
 
-@app.route("/contact-us", methods=['GET', 'POST'])
+@app.route("/contact-us")
 def contact():
-    if request.method == 'POST':
-        # recaptcha...make sure user isn't a bot
-        recaptchaResponse = request.form['g-recaptcha-response']
-        verifyResponse = requests.post(url=f"{RECAPTCHA_VERIFY_URL}?secret={RECAPTCHA_SECRET_KEY}&response={recaptchaResponse}").json()
-        if verifyResponse['success'] == False:
-            abort(401)
-            
-        # user is not a bot...send the message as a email
-        name = request.form['name']
-        email = request.form['email']
-        message = request.form['message']
-
-        msg = Message("Message from website contact form", recipients=[MAIL_TO], reply_to=email)
-        msg.html = render_template("contact-email.html", message=message, email=email, name=name)
-        mail.send(msg)
-        # after email is sent successfully, show a success alert
-        return render_template("contact-us.html", active_page="contact-us", success=1, site_key=RECAPTCHA_SITE_KEY)
-    return render_template("contact-us.html", active_page="contact-us", site_key=RECAPTCHA_SITE_KEY)
+    return render_template("contact-us.html", active_page="contact-us")
 
 
 if __name__ == '__main__':

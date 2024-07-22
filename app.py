@@ -1,25 +1,6 @@
-from flask import Flask, render_template, request, abort
-from flask_mail import Mail, Message
-import requests
-from config import MAIL_USERNAME, MAIL_PASSWORD, MAIL_PORT, MAIL_SERVER, MAIL_DEFAULT_SENDER, MAIL_TO, RECAPTCHA_SITE_KEY, RECAPTCHA_SECRET_KEY, RECAPTCHA_VERIFY_URL
+from flask import Flask, render_template
 
 app = Flask(__name__)
-
-# adding all configs 
-app.config.from_pyfile('config.py')
-
-# SMTP server configuration
-app.config["MAIL_SERVER"] = MAIL_SERVER
-app.config["MAIL_PORT"] = MAIL_PORT
-app.config["MAIL_USERNAME"] = MAIL_USERNAME
-app.config["MAIL_PASSWORD"] = MAIL_PASSWORD
-app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USE_SSL"] = False
-app.config["MAIL_DEFAULT_SENDER"] = MAIL_DEFAULT_SENDER
-
-# initialize the mailer
-mail = Mail()
-mail.init_app(app)
 
 @app.route("/")
 def index():

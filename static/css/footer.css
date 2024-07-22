@@ -48,20 +48,10 @@
   gap: 22px;
 }
 
-.office .address {
-
-}
-
-.office .email {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.office .email:hover,
 .office .phone:hover {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.office .email:focus,
 .office .phone:focus {
   text-decoration: none;
   color: white;
@@ -129,20 +119,6 @@
   100% {
     left: 100%;
   }
-}
-
-.email-link {
-  transition: opacity 0.05s;
-}
-
-.email-link:focus {
-  color: white;
-  text-decoration: none;
-}
-
-.email-link:hover {
-  color: white;
-  opacity: 0.5;
 }
 
 @media (max-width: 1050px) {

@@ -188,7 +188,7 @@
 .answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1.4s ease;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .answer p {
@@ -196,8 +196,8 @@
 }
 
 .faq.active .answer {
-  max-height: 500px; 
-  animation: fade 1s ease-in-out;
+  max-height: 100vh; 
+  animation: fade 0.3s ease-in-out;
 }
 
 .faq.active .arrow {

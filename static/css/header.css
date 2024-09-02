@@ -75,6 +75,11 @@
 }
 
 .navigation-buttons {
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
   width: 70%;
   margin-left: auto;
   display: flex;
@@ -86,9 +91,30 @@
     width: 100%;
   }
 }
-  
-.navigation-item {
+
+.navigation-buttons li {
   flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-menu {
+  background-color: rgb(34, 34, 34);
+}
+
+.dropdown-menu li a {
+  color: rgb(157, 157, 157);
+}
+
+.dropdown-menu li a:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.navigation-item {
   color: rgb(157, 157, 157);
   padding: 15px 0px;
   border: none;

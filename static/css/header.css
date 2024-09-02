@@ -96,6 +96,11 @@
   transition: opacity 0.05s;
 }
 
+.navigation-item:focus {
+  color: rgb(157, 157, 157);
+  text-decoration: none;
+}
+
 .navigation-item.active {
   color: white;
   opacity: 0.9;

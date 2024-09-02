@@ -87,6 +87,7 @@
 
 @media (max-width: 767px) {
   .navigation-buttons {
+    padding: 0;
     flex-direction: column;
     width: 100%;
   }

@@ -48,11 +48,15 @@
   gap: 22px;
 }
 
-.office .phone:hover {
+.office a {
+  text-align: left;
+}
+
+.office a:hover {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.office .phone:focus {
+.office a:focus {
   text-decoration: none;
   color: white;
 }

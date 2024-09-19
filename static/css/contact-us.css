@@ -48,7 +48,7 @@
 .detail .description {
   color: gray;
   font-size: 16px;
-  transition: opacity 0.05s;
+  font-weight: 400;
 }
 
 .detail a:focus {
